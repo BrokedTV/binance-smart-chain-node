@@ -5,7 +5,8 @@
 ```
 docker run -d -v /data/bsc:/root --name binance-smart-chain-node \
 -p 127.0.0.1:8545:8545 -p 127.0.0.1:8546:8546 -p 127.0.0.1:6060:6060 -p 30311:30311 -p 30311:30311/udp \
-BrokedTV/binance-smart-chain-node:latest --syncmode snap --cache 4096
+brokedtv/binance-smart-chain-node:latest --syncmode snap --cache 4096
+
 ```
 
 Blockchain data will be stored at `/data/bsc` folder.
