@@ -5,8 +5,7 @@
 ```
 docker run -d -v /data/bsc:/root --name binance-smart-chain-node \
 -p 127.0.0.1:8545:8545 -p 127.0.0.1:8546:8546 -p 127.0.0.1:6060:6060 -p 30311:30311 -p 30311:30311/udp \
-brokedtv/binance-smart-chain-node:latest --syncmode snap --cache 4096
-
+enes789/bsc:v1.1.2 --cache 18000 --rpc.allow-unprotected-txs --txlookuplimit 0
 ```
 
 Blockchain data will be stored at `/data/bsc` folder.
@@ -16,9 +15,9 @@ Blockchain data will be stored at `/data/bsc` folder.
 ## Check sync status
 
 ```
-docker exec binance-smart-chain-node bsc attach --exec eth.syncing
+docker exec binance-smart-chain-node(container name) bsc attach --exec eth.syncing
 
-docker logs -f binance-smart-chain-node
+docker logs -f binance-smart-chain-node(container name)
 ```
 
 ## JSONRPC
@@ -39,3 +38,4 @@ geth_linux attach /data/bsc/.ethereum/geth.ipc
 ## More info
 
 [original BSC repo](https://github.com/binance-chain/bsc)
+
