@@ -8,7 +8,7 @@ RUN apt-get update -y \
 
 ENV VERSION=1.1.5
 
-RUN curl "https://api.github.com/repos/binance-chain/bsc/releases/tags/v${VERSION}" | jq --null-input '.assets[] | select( .browser_download_url | contains("mainnet.zip") or contains("geth_linux")) | .browser_download_url' | xargs curl -LOJ && \
+RUN curl "https://api.github.com/repos/binance-chain/bsc/releases/tags/v${VERSION}" | jq '.assets[] | select( .browser_download_url | contains("mainnet.zip") or contains("geth_linux")) | .browser_download_url' | xargs curl  && \
     unzip mainnet.zip -d / && \
     sed -i 's/^HTTPHost.*/HTTPHost = "0.0.0.0"/' /config.toml && \
     sed -i '/^WSPort.*/a WSHost = "0.0.0.0"' /config.toml && \
