@@ -8,6 +8,7 @@ RUN apt-get update -y \
 
 ENV VERSION=1.1.8
 
+
 RUN curl --silent "https://api.github.com/repos/binance-chain/bsc/releases/tags/v${VERSION}" | jq -c '.assets[] | select( .browser_download_url | contains("mainnet.zip") or contains("geth_linux")) | .browser_download_url' | xargs -n1 curl -LOJ && \
     unzip mainnet.zip -d / && \
     sed -i 's/^HTTPHost.*/HTTPHost = "0.0.0.0"/' /config.toml && \
