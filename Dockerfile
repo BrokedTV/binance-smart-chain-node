@@ -9,7 +9,7 @@ RUN apt-get update -y \
 ENV VERSION=1.1.5
 
 
-RUN curl "https://github.com/bnb-chain/bsc/releases/download/v1.1.8/mainnet.zip" | xargs -n1 curl -LOJ && \
+RUN curl "https://github.com/bnb-chain/bsc/releases/download/v1.1.8/mainnet.zip" -LOJ && \
     unzip mainnet.zip -d / && \
     sed -i 's/^HTTPHost.*/HTTPHost = "0.0.0.0"/' /config.toml && \
     sed -i '/^WSPort.*/a WSHost = "0.0.0.0"' /config.toml && \
