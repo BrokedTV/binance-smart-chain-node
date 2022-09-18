@@ -2,9 +2,9 @@ version: '3'
 services:
   bsc-node:
     container_name: bsc
-    image:  brokedtv/bsc:v1.1.12
+    image:  brokedtv/bsc:v1.1.13
     restart: always
-    command: --cache 100000 --rpc.allow-unprotected-txs --txlookuplimit 0 --http --maxpeers 100 --ws --syncmode=full --snapshot=false --diffsync 
+    command: --cache 100000 --rpc.allow-unprotected-txs --txlookuplimit 0 --http --maxpeers 100 --ws --syncmode=full --snapshot=false --diffsync=true --tries-verify-mode=none --pruneancient=true
     volumes:
       - ./data/bsc:/root
     ports:
