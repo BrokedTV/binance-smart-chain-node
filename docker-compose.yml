@@ -4,7 +4,7 @@ services:
     container_name: bsc
     image:  brokedtv/bsc:v1.1.13
     restart: always
-    command: --txlookuplimit=0 --diffsync=true --syncmode=full --tries-verify-mode=none --pruneancient=true --diffblock=5000
+    command: --txlookuplimit=0 --syncmode=full --tries-verify-mode=none --pruneancient=true --diffblock=5000
     volumes:
       - ./data/bsc:/root
     ports:
