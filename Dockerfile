@@ -6,7 +6,7 @@ RUN apt-get update -y \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-ENV VERSION=1.1.13
+ENV VERSION=1.1.15
 
 RUN curl -LOJ "https://github.com/bnb-chain/bsc/releases/download/v${VERSION}/mainnet.zip" && \
     curl -LOJ "https://github.com/bnb-chain/bsc/releases/download/v${VERSION}/geth_linux" && \
