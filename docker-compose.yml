@@ -2,7 +2,7 @@ version: '3'
 services:
   bsc-node:
     container_name: bsc
-    image:  brokedtv/bsc:v1.1.15
+    image:  brokedtv/bsc:v1.1.16
     restart: always
     command: --txlookuplimit=0 --syncmode=full --tries-verify-mode=none --pruneancient=true --diffblock=5000
     volumes:
